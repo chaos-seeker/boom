@@ -1,1 +1,37 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --text-xsp: 13px;
+  --text-smp: 15px;
+  --text-mdp: 17px;
+  --default-transition-duration: 0.35s;
+  --color-primary: #00a693;
+}
+
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+  html {
+    @apply scroll-smooth overflow-x-hidden;
+  }
+  body {
+    @apply flex min-h-dvh flex-col overflow-x-hidden bg-[#f7f8fa];
+  }
+  input {
+    @apply outline-none;
+  }
+  main {
+    @apply flex h-full flex-1 flex-col gap-5 py-6;
+  }
+  button {
+    @apply cursor-pointer;
+  }
+}
+
+@utility container {
+  @apply mx-auto max-w-7xl px-4;
+}
+

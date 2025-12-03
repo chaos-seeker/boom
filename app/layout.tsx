@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
 import { PropsWithChildren } from "react";
+import LayoutBase from "@/containers/layouts/base";
 
 const iransansx = localFont({
   src: "../public/fonts/iransansx/IRANSansXV.woff2",
@@ -17,11 +18,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout(props: PropsWithChildren) {
   return (
-    <html lang="en">
+    <html lang="fa" dir="rtl">
       <body
-        className={`${iransansx.variable} antialiased`}
+        className={`${iransansx.className} antialiased`}
       >
-        {props.children}
+        <LayoutBase>{props.children}</LayoutBase>
       </body>
     </html>
   );
